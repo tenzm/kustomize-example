@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: stage
+spec:
+  template:
+    spec:
+      containers:
+        - name: nginx
+          env:
+            - name: kek
+              value: cheburek

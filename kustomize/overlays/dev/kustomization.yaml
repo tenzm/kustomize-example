@@ -1,0 +1,14 @@
+resources:
+  - ../../base
+
+namespace: dev-namespace
+
+images:
+  - name: old
+    newName: nginx
+    newTag: latest
+
+configMapGenerator:
+  - name: nginx-configuration
+    files:
+      - index.html

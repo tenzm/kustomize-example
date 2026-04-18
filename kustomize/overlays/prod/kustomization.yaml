@@ -1,0 +1,23 @@
+resources:
+  - ../../base
+
+namespace: prod-namespace
+namePrefix: mai-
+
+replicas:
+  - name: nginx-deployment
+    count: 10
+
+images:
+  - name: old
+    newName: nginx
+    newTag: stable-alpine
+
+configMapGenerator:
+  - name: nginx-configuration
+    files:
+      - index.html
+
+patches:
+  - path: patch.deployment.yaml
+  - path: patch.svc.yaml

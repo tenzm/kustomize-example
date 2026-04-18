@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+  namespace: stage
+  labels:
+    somelabel: "label123"
+spec:
+  ports:
+    - name: main-port
+      port: 8080
